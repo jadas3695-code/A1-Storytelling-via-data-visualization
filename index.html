@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Kitty: 2026 Strategy Report</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎀 The 2026 Hello Kitty Report 🎀</h1>
+    
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHcwZjFsbWh6aWoxcTFwZ3ZxY25nYnJtZmcxaWY3MDR0em5yZGQ5bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jpqwTJ25fA9HzdeS8Z/giphy.gif" class="intro-gif" alt="Hello Kitty 2026">
+
+    <div class="narrative">
+        <p>
+            Nearly everyone recognizes the iconic characters that have defined the Sanrio universe for decades, but as we progress through <span class="highlight">2026</span>, their global influence has reached an unprecedented peak. What began as a celebration of Hello Kitty’s 50th Anniversary in 2024 has evolved into a massive cultural resurgence that spans generations. This renewed obsession is reflected in the data: for the <span class="highlight">2025 fiscal year</span>, Sanrio achieved a record-breaking operating profit of <span class="highlight">31.2 billion yen</span>. This financial success highlights how these classic icons have successfully moved beyond traditional toys to become premium symbols of nostalgia and modern fashion, captivating both dedicated long-time collectors and a new wave of global fans.
+        </p>
+    </div>
+
+    <div class="chart-wrapper">
+        <canvas id="growthChart"></canvas>
+    </div>
+
+    <div class="narrative">
+        <p>
+            Beyond the financial metrics, the true pulse of the brand is best measured by fan engagement and character loyalty. The <span class="highlight">2025 Sanrio Character Ranking</span> showcased a historic turnout, reflecting a massive surge in worldwide participation. While <span class="highlight">Cinnamoroll</span> secured his sixth consecutive victory, <span class="highlight">Hello Kitty</span> climbed the ranks to <span class="highlight">#2 globally</span>, closing the gap significantly during her milestone anniversary year. This shift in the standings highlights a powerful resurgence for the classic lineup, with the data being driven by millions of votes.
+        </p>
+    </div>  
+
+    <div class="chart-wrapper">
+        <canvas id="popularityChart"></canvas>
+    </div>
+
+</div>
+
+<script>
+    new Chart(document.getElementById('growthChart'), {
+        type: 'line',
+        data: {
+            labels: ['2024 (Actual)', '2025 (Actual)', '2026 (Projected)'],
+            datasets: [{
+                label: 'Operating Profit (Billions ¥)',
+                data: [27.0, 31.2, 34.8], 
+                borderColor: '#ff69b4',
+                backgroundColor: 'rgba(255, 182, 193, 0.3)',
+                fill: true,
+                borderWidth: 5,
+                tension: 0.3
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { labels: { font: { family: 'Comic Sans MS' } } }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('popularityChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Cinnamoroll', 'Hello Kitty', 'Pochacco', 'Kuromi'],
+            datasets: [{
+                label: '2025 Global Votes (Millions)',
+                data: [5.8, 4.9, 4.6, 4.2],
+                backgroundColor: ['#add8e6', '#ffb6c1', '#90ee90', '#e6e6fa'],
+                borderRadius: 15
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
